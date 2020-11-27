@@ -36,7 +36,7 @@ public class BlogController {
 
     @GetMapping("/blogs")  //后台显示博客列表
     public String blogs(@RequestParam(required = false,defaultValue = "1",value = "pagenum")int pagenum, Model model){
-        PageHelper.startPage(pagenum, 5);
+        PageHelper.startPage(pagenum, 10);
         List<Blog> allBlog = blogService.getAllBlog();
         //得到分页结果对象
         PageInfo pageInfo = new PageInfo(allBlog);

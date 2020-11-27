@@ -50,8 +50,8 @@
             <th colspan="7">
               <div class="ui mini pagination menu"  >
                 <div class="item"><a th:href="@{/admin/tags}">首页</a></div>
-                <div class="item"><a th:href="@{/admin/tags(pagenum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1)}">上一页</a></div>
-                <div class="item"><a th:href="@{/admin/tags(pagenum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pages})}">下一页</a></div>
+                <div class="item"><a th:href="@{/admin/tags(pagenum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1)}" th:unless="${pageInfo.isFirstPage}">上一页</a></div>
+                <div class="item"><a th:href="@{/admin/tags(pagenum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pages})}" th:unless="${pageInfo.isLastPage}">下一页</a></div>
                 <div class="item"><a th:href="@{/admin/tags(pagenum=${pageInfo.pages})}">尾页</a></div>
               </div>
               <a href="#" th:href="@{/admin/tags/input}" class="ui mini right floated teal basic button">新增</a>
