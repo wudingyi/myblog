@@ -26,8 +26,8 @@
 
     <select id="getBlogType" resultMap="type">
         select t.id tid, t.name, b.id bid, b.title, b.type_id
-        from t_type t, t_blog b
-        where t.id = b.type_id
+        from t_type t left join t_blog b
+        on t.id = b.type_id
     </select>
 
 

@@ -29,8 +29,8 @@
 
     <select id="getBlogTag" resultMap="tags">
         select t.id tid, t.name, b.id bid, b.title
-        from t_tag t, t_blog b, t_blog_tags bt
-        where t.id = bt.tag_id and b.id = bt.blog_id
+        from t_tag t LEFT JOIN t_blog_tags bt on t.id =bt.tag_id
+				LEFT JOIN t_blog b on b.id =bt.tag_id
     </select>
 
     <select id="getTagByName" resultType="Tag">
